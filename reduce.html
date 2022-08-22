@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //作业1
+
+        let arr = []
+        for (let i = 1; i <= 100; i++) {
+            arr.push(i)
+        }
+        console.log(arr.reduce((a, b) => a + b))
+
+        // 作业2: 笔试原题
+
+        let url = 'http://www.baidu.com/?name=zhangsan&age=18&sex=nan#'
+        function process(url) {
+            let url1 = url.split('?')[1].split('#')[0].split('&')
+            let obj = url1.reduce((a, b) => {
+                let arr = b.split('=')
+                a[arr[0]] = arr[1]
+                return a
+            }, {})
+            return obj
+        }
+        console.log(process(url));
+    </script>
+</body>
+
+</html>
